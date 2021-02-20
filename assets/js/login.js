@@ -38,3 +38,13 @@ function login(){
         console.log("Error", e)
     })
 }
+
+function logout(){
+    if (window.confirm("Are you sure you want to log out ? \n press ok to continue or cancel to quit operation")){
+        localStorage.clear()
+        location.replace("index.html")
+    }
+    else{
+        console.log("log out cancelled")
+    }
+}
