@@ -43,5 +43,126 @@
         "name": "Rotavirus (RV)",
         "minmum_age_prescription": "6",
         "description": "Rotavirus spreads easily among infants and young children. The virus can cause severe watery diarrhea, vomiting, fever, and abdominal pain. Children who get rotavirus disease can become dehydrated and may need to be hospitalized."
+    },
+    "vac_10": {
+        "name": "Measles",
+        "minmum_age_prescription": "16",
+        "description": "Measles vaccine protects against becoming infected with measles.Nearly all of those who do not develop immunity after a single dose develop it after a second dose."
+    }, 
+    "vac_11": {
+        "name": "Chickenpox",
+        "minmum_age_prescription": "16",
+        "description": "The chickenpox vaccine is a shot that can protect nearly anyone who receives the vaccine from catching chickenpox. It's also called the varicella vaccine, because chickenpox is caused by the varicella-zoster virus. The vaccine is made from a live but weakened, or attenuated, virus."
+    },
+    "vac_12": {
+        "name": "Hepatitus A",
+        "minmum_age_prescription": "16",
+        "description": "Hepatitis A vaccine is a vaccine that prevents hepatitis A. It is effective in around 95% of cases and lasts for at least fifteen years and possibly a person's entire life"
+    },  
+    "vac_13": {
+        "name": "Hepatitus B",
+        "minmum_age_prescription": "16",
+        "description": " Hepatitis B is a serious disease caused by a virus that attacks the liver \\nThe virus is called hepatitis B virus (HBV) and it  can cause lifelong infection such as cirrhosis (scarring) of the liver and \\nliver cancer and liver failure and death. Hepatitis B vaccine is \\navailable for all age groups to prevent HBV infection."
+    },
+    "vac_14": {
+        "name": "Pneumococcal (PCV)",
+        "minmum_age_prescription": "16",
+        "description": "Pneumococcal conjugate vaccine (PCV) is a pneumococcal vaccine and a conjugate vaccine used to protect infants, young children, and adults against disease caused by the bacterium Streptococcus pneumoniae (pneumococcus). "
+    },
+    "vac_15": {
+        "name": "Influenza",
+        "minmum_age_prescription": "24",
+        "description": "Influenza vaccines, also known as flu shots or flu jabs, are vaccines that protect against infection by influenza viruses. New versions of the vaccines are developed twice a year, as the influenza virus rapidly changes. While their effectiveness varies from year to year, most provide modest to high protection against influenza"
+    },
+    "vac_16": {
+        "name": "Polio",
+        "minmum_age_prescription": "60",
+        "description": "Polio vaccines are vaccines used to prevent poliomyelitis (polio).//nTwo types are used: an inactivated poliovirus given by injection (IPV) //nand a weakened poliovirus given by mouth (OPV)"
+    },
+    "vac_17": {
+        "name": "Measles",
+        "minmum_age_prescription": "60",
+        "description": "Measles vaccine protects against becoming infected with measles.Nearly all of those who do not develop immunity after a single dose develop it after a second dose."
+    },
+    "vac_18": {
+        "name": "Chickenpox",
+        "minmum_age_prescription": "60",
+        "description": "The chickenpox vaccine is a shot that can protect nearly anyone who receives the vaccine from catching chickenpox. It's also called the varicella vaccine, because chickenpox is caused by the varicella-zoster virus. The vaccine is made from a live but weakened, or attenuated, virus."
+    },
+    "vac_19": {
+        "name": "Influenza",
+        "minmum_age_prescription": "60",
+        "description": "Influenza vaccines, also known as flu shots or flu jabs, are vaccines that protect against infection by influenza viruses. New versions of the vaccines are developed twice a year, as the influenza virus rapidly changes. While their effectiveness varies from year to year, most provide modest to high protection against influenza"
+    },
+    "vac_20": {
+        "name": "Influenza",
+        "minmum_age_prescription": "96",
+        "description": "Influenza vaccines, also known as flu shots or flu jabs, are vaccines that protect against infection by influenza viruses. New versions of the vaccines are developed twice a year, as the influenza virus rapidly changes. While their effectiveness varies from year to year, most provide modest to high protection against influenza"
+    },
+    "vac_21": {
+        "name": "HPV Vaccine",
+        "minmum_age_prescription": "132",
+        "description": "Various strains of HPV spread through sexual contact and are associated with most cases of cervical cancer. Gardasil 9 is an HPV vaccine approved by the U.S. Food and Drug Administration and can be used for both girls and boys."
+    },
+    "vac_22": {
+        "name": "Tdap",
+        "minmum_age_prescription": "132",
+        "description": "Tdap vaccine can prevent tetanus, diphtheria, and pertussis. Tdap is only for children 7 years and older, adolescents, and adults. Tdap may be given at the same time as other vaccines."
+
+    },
+    "vac_23": {
+        "name": "Influenza",
+        "minmum_age_prescription": "132",
+        "description": "Influenza vaccines, also known as flu shots or flu jabs, are vaccines that protect against infection by influenza viruses. New versions of the vaccines are developed twice a year, as the influenza virus rapidly changes. While their effectiveness varies from year to year, most provide modest to high protection against influenza"
+    },
+    "vac_24": {
+        "name": "Influenza",
+        "minmum_age_prescription": "132",
+        "description": "Influenza vaccines, also known as flu shots or flu jabs, are vaccines that protect against infection by influenza viruses. New versions of the vaccines are developed twice a year, as the influenza virus rapidly changes. While their effectiveness varies from year to year, most provide modest to high protection against influenza"
+    },
+    "vac_25": {
+        "name": "Meningococcal conjugate",
+        "minmum_age_prescription": "60",
+        "description": "Vaccines can help prevent meningococcal disease, which is any type of illness caused by Neisseria meningitidis bacteria.All 11 to 12 year olds should get a meningococcal conjugate vaccine, with a booster dose at 16 years old. Teens and young adults (16 through 23 year olds) also may get a serogroup B meningococcal vaccine."
+    },
+    "vac_26": {
+        "name": "Influenza",
+        "minmum_age_prescription": "180",
+        "description": "Influenza vaccines, also known as flu shots or flu jabs, are vaccines that protect against infection by influenza viruses. New versions of the vaccines are developed twice a year, as the influenza virus rapidly changes. While their effectiveness varies from year to year, most provide modest to high protection against influenza"
+    },
+    "vac_27": {
+        "name": "Influenza",
+        "minmum_age_prescription": "240",
+        "description": "Influenza vaccines, also known as flu shots or flu jabs, are vaccines that protect against infection by influenza viruses. New versions of the vaccines are developed twice a year, as the influenza virus rapidly changes. While their effectiveness varies from year to year, most provide modest to high protection against influenza"
+    },
+    "vac_28": {
+        "name": "Tdap",
+        "minmum_age_prescription": "240",
+        "description": "Tdap vaccine can prevent tetanus, diphtheria, and pertussis. Tdap is only for children 7 years and older, adolescents, and adults. Tdap may be given at the same time as other vaccines."
+    },
+    "vac_29": {
+        "name": "HPV Vaccine",
+        "minmum_age_prescription": "240",
+        "description": "Various strains of HPV spread through sexual contact and are associated with most cases of cervical cancer. Gardasil 9 is an HPV vaccine approved by the U.S. Food and Drug Administration and can be used for both girls and boys."
+    },
+    "vac_30": {
+        "name": "zoster",
+        "minmum_age_prescription": "360",
+        "description": "A zoster vaccine is a vaccine that reduces the incidence of herpes zoster (shingles), a viral disease that provokes a painful rash with blisters."
+    },
+    "vac_31": {
+        "name": "Tdap",
+        "minmum_age_prescription": "360",
+        "description": "Tdap vaccine can prevent tetanus, diphtheria, and pertussis. Tdap is only for children 7 years and older, adolescents, and adults. Tdap may be given at the same time as other vaccines."
+    },
+    "vac_32": {
+        "name": "zoster",
+        "minmum_age_prescription": "720",
+        "description": "A zoster vaccine is a vaccine that reduces the incidence of herpes zoster (shingles), a viral disease that provokes a painful rash with blisters."
+    },
+    "vac_33": {
+        "name": "Pneumococcal vaccines",
+        "minmum_age_prescription": "720",
+        "description": "Pneumococcal conjugate vaccine (PCV) is a pneumococcal vaccine and a conjugate vaccine used to protect infants, young children, and adults against disease caused by the bacterium Streptococcus pneumoniae (pneumococcus). "
     }
 }
