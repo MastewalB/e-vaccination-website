@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Sign Up</title>
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top navbar navbar-expad-lg">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo me-auto"><a href="index.html">eVaccination</a></h1>
+
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                    <li class=""><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#Overview">Overview</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+
+                </ul>
+            </nav><!-- .nav-menu -->
+
+            <a href="./signUp.html" class="button-btn Btn_active">Sign up </a>
+            <a href="./logIn.html" class="button-btn">Login</a>
+
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Appointment Section ======= -->
+    <section id="appointment" class="appointment section-bg mt-4">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sign Up</h2>
+            </div>
+
+            <form action="" id="signupForm">
+                <div class="row">
+                    <h3>Basic Information</h3>
+                    <div class="col-md-4 form-group">
+                        <input type="text" name="name" class="form-control" id="fname" placeholder="First Name"
+                            data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                        <div class="validate"></div>
+                    </div>
+                    <div class="col-md-4 form-group mt-3 mt-md-0">
+                        <input type="text" class="form-control" name="name" id="lname" placeholder="Last Name"
+                            data-rule="" data-msg="Please enter a valid email">
+                        <div class="validate"></div>
+                    </div>
+                    <div class="col-md-4 form-group mt-3 mt-md-0">
+                        <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone number"
+                            data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                        <div class="validate"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 form-group mt-3">
+                        <input type="email" name="name" class="form-control" id="email" placeholder="Email"
+                            data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                        <div class="validate"></div>
+                    </div>
+                    <div class="col-md-4 form-group mt-3">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="password"
+                            data-rule="email" data-msg="Please enter a valid email">
+                        <div class="validate"></div>
+                    </div>
+                    <div class="col-md-4 form-group mt-3">
+                        <input type="password" class="form-control" name="password" id="password"
+                            placeholder="Confirm password" data-rule="minlen:4"
+                            data-msg="Please enter at least 4 chars">
+                        <div class="validate"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 form-group mt-3">
+                        <input type="date" name="date" id="birthdate" class="form-control">
+                        <div class="validate"></div>
+                    </div>
+                    <div class="col-md-4 form-group mt-3">
+                        <select name="sex" id="sex" class="form-select">
+                            <option value="">Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                        <div class="validate"></div>
+                    </div>
+                    <div class="col-md-4 form-group mt-3">
+                        <select name="subcity" id="subcity" class="form-select">
+                            <option value="">Sub City</option>
+                            <option value="Kolfe-Keranyo"> Kolfe-Keranyo</option>
+                            <option value="Kirkos"> Kirkos </option>
+                            <option value="Nifas-Silk"> Nifas-Silk </option>
+                            <option value="Gulele"> Gulele </option>
+                            <option value="Yeka"> Yeka </option>
+                            <option value="Lemi-Kura"> Lemi-Kura </option>
+                            <option value="Akaki-Kality"> Akaki-Kality </option>
+                            <option value="Arada">Arada</option>
+                            <option value="Addis-Ketema"> Addis-Ketema </option>
+                            <option value="Lideta"> Lideta </option>
+                        </select>
+                        </select>
+                        <div class="validate"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <h3 class="mt-3">Medical Record</h3>
+                    <div class="col-md-4 form-group mt-3">
+                        <input type="text" class="form-control" name="text" id="name" placeholder="Height in cm"
+                            data-rule="text" data-msg="Please enter a valid email">
+                        <div class="validate"></div>
+                    </div>
+                    <div class="col-md-4 form-group mt-3">
+                        <input type="text" class="form-control" name="text" id="name" placeholder="Weight in Kg"
+                            data-rule="text" data-msg="Please enter a valid email">
+                        <div class="validate"></div>
+                        <div class="validate"></div>
+                    </div>
+                    <div class="col-md-4 form-group mt-3">
+                        <select name="department" id="department" class="form-select">
+                            <option value="">Do you consume alcohol daily</option>
+                            <option value="None">Yes</option>
+                            <option value="chest pain">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 form-group mt-3">
+                        <select name="department" id="department" class="form-select">
+                            <option value="">Do you smoke daily</option>
+                            <option value="None">Yes</option>
+                            <option value="chest pain">No</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 form-group mt-3">
+                        <select name="department" id="department" class="form-select">
+                            <option value="">Family Medical History</option>
+                            <option value="None">None</option>
+                            <option value="chest pain">cystic fibrosis</option>
+                            <option value="cardiac disease">sickle cell anemia</option>
+                            <option value="Female">Marfan syndrome</option>
+                            <option value="Female">Down syndrome</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 form-group mt-3">
+                        <select name="department" id="department" class="form-select">
+                            <option value="">Current symptoms</option>
+                            <option value="None">None</option>
+                            <option value="chest pain">Chest pain</option>
+                            <option value="cardiac disease">Respiratory</option>
+                            <option value="Female">Gastrointestinal</option>
+                            <option value="Female">Musculoskeletal</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary btn-lg mt-4 d-flex mx-auto">Sign up</button>
+            </form>
+        </div>
+        </div>
+
+        </div>
+    </section><!-- End Appointment Section -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 footer-contact">
+                        <h3>eVaccination</h3>
+                        <p>
+                            5 Kilo main campus<br>
+                            Addis Ababa<br>
+                            Ethiopia<br><br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Deliver Vaccinations</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Get News</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Admin Chat</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Contacts</h4>
+                        <strong>Phone:</strong> +2511234567<br>
+                        <strong>Email:</strong> <a href="">eVac@gmail.com</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <script src="https://unpkg.com/dexie/dist/dexie.js"></script>
+    <script src="./assets/js/profile.js"></script>
+    <script src="./assets/js/db.js"></script>
+    <script src="./assets/js/signup.js"></script>
+</body>
+
+</html>
