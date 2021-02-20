@@ -1,0 +1,47 @@
+{
+    "vac_01": {
+        "name": "Hepatitis B",
+        "minimum_age_prescription": "1",
+        "description": " Hepatitis B is a serious disease caused by a virus that attacks the liver \\nThe virus is called hepatitis B virus (HBV) and it  can cause lifelong infection such as cirrhosis (scarring) of the liver and \\nliver cancer and liver failure and death. Hepatitis B vaccine is \\navailable for all age groups to prevent HBV infection."
+    },
+    "vac_02": {
+        "name": "Polio",
+        "minimum_age_prescription": "1",
+        "description": "Polio vaccines are vaccines used to prevent poliomyelitis (polio).//nTwo types are used: an inactivated poliovirus given by injection (IPV) //nand a weakened poliovirus given by mouth (OPV)"
+    },
+    "vac_03": {
+        "name": "Rotavirus",
+        "minmum_age_prescription": "1",
+        "description": "Rotavirus spreads easily among infants and young children. The virus can cause severe watery diarrhea, vomiting, fever, and abdominal pain. Children who get rotavirus disease can become dehydrated and may need to be hospitalized."
+    },
+    "vac_04": {
+        "name": "Polio",
+        "minmum_age_prescription": "4",
+        "description": "Polio vaccines are vaccines used to prevent poliomyelitis (polio).//nTwo types are used: an inactivated poliovirus given by injection (IPV) //nand a weakened poliovirus given by mouth (OPV)"
+    },
+    "vac_05": {
+        "name": "Rotavirus",
+        "minmum_age_prescription": "4",
+        "description": "Rotavirus spreads easily among infants and young children. The virus can cause severe watery diarrhea, vomiting, fever, and abdominal pain. Children who get rotavirus disease can become dehydrated and may need to be hospitalized."
+    },
+    "vac_06": {
+        "name": "Pneumococcal (PCV)",
+        "minmum_age_prescription": "4",
+        "description": "Pneumococcal conjugate vaccine (PCV) is a pneumococcal vaccine and a conjugate vaccine used to protect infants, young children, and adults against disease caused by the bacterium Streptococcus pneumoniae (pneumococcus). "
+    },
+    "vac_07": {
+        "name": "Polio",
+        "minmum_age_prescription": "6",
+        "description": "Polio vaccines are vaccines used to prevent poliomyelitis (polio).//nTwo types are used: an inactivated poliovirus given by injection (IPV) //nand a weakened poliovirus given by mouth (OPV)"
+    },
+    "vac_08": {
+        "name": "Influenza",
+        "minmum_age_prescription": "6",
+        "description": "Influenza vaccines, also known as flu shots or flu jabs, are vaccines that protect against infection by influenza viruses. New versions of the vaccines are developed twice a year, as the influenza virus rapidly changes. While their effectiveness varies from year to year, most provide modest to high protection against influenza"
+    },
+    "vac_09": {
+        "name": "Rotavirus (RV)",
+        "minmum_age_prescription": "6",
+        "description": "Rotavirus spreads easily among infants and young children. The virus can cause severe watery diarrhea, vomiting, fever, and abdominal pain. Children who get rotavirus disease can become dehydrated and may need to be hospitalized."
+    }
+}
