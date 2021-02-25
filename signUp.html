@@ -89,9 +89,9 @@
                         <div class="validate"></div>
                     </div>
                     <div class="col-md-4 form-group mt-3">
-                        <input type="password" class="form-control" name="password2" id="password"
+                        <input type="password" class="form-control" name="password2" id="password3"
                             placeholder="Confirm password" data-rule="minlen:4"
-                            data-msg="Please enter at least 4 chars" > <span id="msg2"></span>
+                            data-msg="Please enter at least 4 chars" onChange="checkPasswordMatch();"> <span id="msg2"></span>
                         <div class="validate"></div>
                     </div>
                 </div>
@@ -178,7 +178,7 @@
                 </div>
 
 
-                <button type="submit" class="btn btn-primary btn-lg mt-4 d-flex mx-auto">Sign up</button>
+                <button type="submit" class="btn btn-primary btn-lg mt-4 d-flex mx-auto" onclick="checkPassword()">Sign up</button>
             </form>
         </div>
         </div>

@@ -116,7 +116,17 @@ function checkForm(form)
     document.getElementById("msg").innerHTML = strength;
     document.getElementById("msg").style.color = color;
 }
+function checkPasswordMatch() {
+  var password = $("#password").val();
+  var confirmPassword = $("#password3").val();
 
+  if (password !== confirmPassword) {
+      $("#msg2").html("Passwords do not match!");
+  }
+  else {
+      $("#msg2").html("Passwords match.");
+  }
+}
 
 
 // *********Sign up add to indexedDB**************
