@@ -39,21 +39,21 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="User.html">
-                            <i class="bx bx-user"></i>
-                            <p>Recommended</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#vaccines">
-                            <i class="bx bx-health"></i>
-                            <p>Vaccines</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#app">
+                        <a class="nav-link" href="Admin.html">
                             <i class="bx bxs-report"></i>
-                            <p>Appointment</p>
+                            <p>Session</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">
+                            <i class="bx bxs-report"></i>
+                            <p>Status</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">
+                            <i class="bx bxs-report"></i>
+                            <p>Issues</p>
                         </a>
                     </li>
                     <li>
@@ -115,128 +115,57 @@
           <div class="ml-5 mr-5">
         <form action="">
             <div class="row mb-3">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Starting Date</label>
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Starting Date:</label>
                 <div class="col-sm-10">
                     <input type="date" name="date" id="birthdate" class="form-control">
                 </div>
               </div>
-            <div class="validate"></div>
-            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                <option selected>Vaccination Name</option>
-                <option value="1">Polio</option>
-                <option value="2">Hepatitis B</option>
-                <option value="3">Measles</option>
-              </select>
+              <div class="row mb-3">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Vaccination Name:</label>
+                <div class="col-sm-10">
+                    <select class="form-select form-select" aria-label=".form-select example">
+                        <option selected>Select Vaccination Name</option>
+                        <option value="1">Polio</option>
+                        <option value="2">Hepatitis B</option>
+                        <option value="3">Measles</option>
+                      </select>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Duration:</label>
+                <div class="col-sm-10">
+                    <select class="form-select form-select" aria-label=".form-select example">
+                        <option selected>Select Days</option>
+                        <option value="1">14</option>
+                        <option value="2">15</option>
+                        <option value="3">16    </option>
+                      </select>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Recommended Age:</label>
+                <div class="col-sm-5">
+                    <select class="form-select form-select" aria-label=".form-select example">
+                        <option selected>Minimum Age</option>
+                        <option value="1">14</option>
+                        <option value="2">15</option>
+                        <option value="3">16    </option>
+                      </select> 
+                </div>
+                <div class="col-sm-5">
+                    <select class="form-select form-select" aria-label=".form-select example">
+                        <option selected>Maximum Age</option>
+                        <option value="1">14</option>
+                        <option value="2">15</option>
+                        <option value="3">16    </option>
+                      </select>
+                </div>
+              </div>
           </form>
         </div>
     </div>
   </section>
   <!-- End of Recommended vaccines  -->
-
-<!-- Available Vaccines -->
-  <section id="vaccines" class="why-us" style="padding: 0px;">
-    <div class="container-fluid mt-4 p-3">
-        <p class="display-6 ms-4">Available Vaccines </p>
-      <div class="row">
-        <div class="col-lg-12 d-flex align-items-stretch">
-          <div class="icon-boxes d-flex flex-column justify-content-center">
-            <div class="row">
-              <div class="col-xl-3 d-flex align-items-stretch">
-                <div class="icon-box mt-4 mt-xl-0">
-                  <span class="iconify" data-icon="bx-bxs-right-arrow" data-inline="false"></span>
-                  <h4>Hepatitis B</h4>
-                  <p>Hepatitis B is a vaccine-preventable liver infection caused by the hepatitis B virus (HBV)</p>
-                  <button class="btn btn-primary">Apply for Vaccine</button>
-                </div>
-              </div>
-              <div class="col-xl-3 d-flex align-items-stretch">
-                <div class="icon-box mt-4 mt-xl-0">
-                  <span class="iconify" data-icon="bx-bxs-right-arrow" data-inline="false"></span>
-                  <h4>Hepatitis B</h4>
-                  <p>Hepatitis B is a vaccine-preventable liver infection caused by the hepatitis B virus (HBV)</p>
-                  <button class="btn btn-primary">Apply for Vaccine</button>
-                </div>
-              </div>
-              <div class="col-xl-3 d-flex align-items-stretch">
-                <div class="icon-box mt-4 mt-xl-0">
-                  <h4>Measles</h4>
-                  <p>The vaccine protects against three diseases: measles, mumps, and rubella.</p>
-                  <button class="btn btn-primary">Apply for Vaccine</button>
-                </div>
-              </div>
-              <div class="col-xl-3 d-flex align-items-stretch">
-                <div class="icon-box mt-4 mt-xl-0">
-                  <h4>Tetanus</h4>
-                  <p>Tetanus vaccine, also known as tetanus toxoid (TT), is a toxoid vaccine used to prevent tetanus.</p>
-                  <button class="btn btn-primary">Apply for Vaccine</button>
-                </div>
-              </div>
-            </div>
-<!-- second row -->
-            <div class="row mt-3">
-                <div class="col-xl-3 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <span class="iconify" data-icon="bx-bxs-right-arrow" data-inline="false"></span>
-                    <h4>Hepatitis B</h4>
-                    <p>Hepatitis B is a vaccine-preventable liver infection caused by the hepatitis B virus (HBV)</p>
-                    <button class="btn btn-primary">Apply for Vaccine</button>
-                  </div>
-                </div>
-                <div class="col-xl-3 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <span class="iconify" data-icon="bx-bxs-right-arrow" data-inline="false"></span>
-                    <h4>Hepatitis B</h4>
-                    <p>Hepatitis B is a vaccine-preventable liver infection caused by the hepatitis B virus (HBV)</p>
-                    <button class="btn btn-primary">Apply for Vaccine</button>
-                  </div>
-                </div>
-                <div class="col-xl-3 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <h4>Measles</h4>
-                    <p>The vaccine protects against three diseases: measles, mumps, and rubella.</p>
-                    <button class="btn btn-primary">Apply for Vaccine</button>
-                  </div>
-                </div>
-                <div class="col-xl-3 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <h4>Tetanus</h4>
-                    <p>Tetanus vaccine, also known as tetanus toxoid (TT), is a toxoid vaccine used to prevent tetanus.</p>
-                    <button class="btn btn-primary">Apply for Vaccine</button>
-                  </div>
-                </div>
-              </div>
-          </div><!-- End .content-->
-        </div>
-      </div>
-
-    </div>
-  </section>
-  <!-- Available Vaccines -->
-
-
-  <!--Appointment area-->
-  <div class="content">
-    <div class="container-fluid">
-        <div class="row">
-            
-            <div class="col-md-">
-                <div class="card ">
-                    <div class="card-header " id="app">
-                        <h4 class="card-title">Appointment</h4>
-                        <p class="card-category">You don't have any appointments</p>
-                    </div>
-                    <div class="card-body ">
-                        
-                    </div>
-                    <div class="card-footer ">
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
         
         <!-- Start of the Footer-->
             <footer id="footer">
