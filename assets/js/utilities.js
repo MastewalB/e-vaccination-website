@@ -72,4 +72,26 @@ class VaccineSession {
         return ["Monday", "February/15/2021"];
     }
 
+    /*
+    *Takes day value like Monday from the shift class and returns doctors on that day
+    * @param {String} day - Day of the week
+    * @return {Array} doctors - By contacting the shift class, it obtains the doctors working on that day
+    */
+    todays_doctors(day) {
+
+        return ["Doc/01", "Doc/05", "Doc/07"];
+    }
+
+    utc_day_converter(day) {
+        //receives index of week and returns day such as 0 for Monday
+        days = ["Monday", "Tuesday", "Wednesday", "Thursay", "Friday", "Saturday", "Sunday"];
+        return days[day];
+
+    }
+
+
+    set_duration(duration) {
+        this.duration = duration;
+    }
+
 }
