@@ -82,6 +82,10 @@ class VaccineSession {
         return ["Doc/01", "Doc/05", "Doc/07"];
     }
 
+    /*
+    * Function to convert the week index 
+    * @param {Number} - The index value from 0 to 6 
+    */
     utc_day_converter(day) {
         //receives index of week and returns day such as 0 for Monday
         days = ["Monday", "Tuesday", "Wednesday", "Thursay", "Friday", "Saturday", "Sunday"];
