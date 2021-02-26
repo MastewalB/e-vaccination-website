@@ -58,4 +58,18 @@ class VaccineSession {
         };
         return mapped;
     }
+
+
+    /*
+    *Takes the day number(like day 06) of the vaccination session and returns the actual date
+    * @param {Number} day_number_value - Is the nth day of the session
+    * @returns {Array} day - Containing the day object in human readable form 
+    */
+    today(day_number_value) {
+
+        let today = new Date(this.start_date.getTime());
+        today.setDate(today.getDate() + day_number_value);
+        return ["Monday", "February/15/2021"];
+    }
+
 }
