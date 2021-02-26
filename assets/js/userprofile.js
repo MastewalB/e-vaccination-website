@@ -1,6 +1,6 @@
 const logoutBtn = document.getElementById("logout");
 const brandTitle = document.querySelector("#brandTitle");
-const vaccineContainer = document.querySelector(".recommended_vaccines_container .row");
+const vaccineContainer = document.querySelector(".row .recommended_vaccines_container");
 const notification = document.querySelector("#notification");
 
 
