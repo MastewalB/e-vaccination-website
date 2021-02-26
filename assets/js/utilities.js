@@ -89,7 +89,10 @@ class VaccineSession {
 
     }
 
-
+    /*
+    * Sets a duration for the Vaccine Session
+    * @param {Number} duration - Is the number of days of the Session
+    */
     set_duration(duration) {
         this.duration = duration;
     }
