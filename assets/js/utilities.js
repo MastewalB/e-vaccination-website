@@ -24,3 +24,17 @@ class Shift {
     }
 
 }
+
+
+
+
+
+class VaccineSession {
+
+    day_number = 1;
+    vaccine_id = "";
+    start_date = new Date();
+    duration = 0;
+    max_tag_per_doctor = 50;
+    day = new Map();
+}
