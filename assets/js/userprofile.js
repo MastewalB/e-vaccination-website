@@ -1,7 +1,7 @@
 const logoutBtn = document.getElementById("logout");
-const brandTitle = document.getElementById("#brandTitle");
-const vaccineContainer = document.getElementById(".recommended_vaccines_container .row");
-const notification = document.getElementById("#notification");
+const brandTitle = document.querySelector("#brandTitle");
+const vaccineContainer = document.querySelector(".recommended_vaccines_container .row");
+const notification = document.querySelector("#notification");
 
 
 
