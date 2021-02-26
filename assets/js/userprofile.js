@@ -1,3 +1,11 @@
+const logoutBtn = document.getElementById("logout");
+const brandTitle = document.getElementById("#brandTitle");
+const vaccineContainer = document.getElementById(".recommended_vaccines_container .row");
+const notification = document.getElementById("#notification");
+
+
+
+
 db.transaction('rw', db.users, function () { 
     // sth
 })
