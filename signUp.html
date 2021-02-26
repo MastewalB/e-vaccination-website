@@ -6,9 +6,9 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>Sign Up</title>
-
+    <link rel="icon" type="image/png" href="./assets/img/icon.jpg">
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
+
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -68,7 +68,7 @@
                     </div>
                     <div class="col-md-4 form-group mt-3 mt-md-0">
                         <input type="text" class="form-control" name="name" id="lname" placeholder="Last Name"
-                            data-rule="" data-msg="Please enter a valid email">
+                            data-rule="" data-msg="Please enter a valid email" >
                         <div class="validate"></div>
                     </div>
                     <div class="col-md-4 form-group mt-3 mt-md-0">
@@ -85,13 +85,13 @@
                     </div>
                     <div class="col-md-4 form-group mt-3">
                         <input type="password" class="form-control" name="password" id="password" placeholder="password"
-                            data-rule="email" data-msg="Please enter a valid email">
+                            data-rule="email" data-msg="Please enter a valid email" onkeyup="validatePassword(this.value);"><span id="msg"></span>
                         <div class="validate"></div>
                     </div>
                     <div class="col-md-4 form-group mt-3">
-                        <input type="password" class="form-control" name="password" id="password"
+                        <input type="password" class="form-control" name="password2" id="password3"
                             placeholder="Confirm password" data-rule="minlen:4"
-                            data-msg="Please enter at least 4 chars">
+                            data-msg="Please enter at least 4 chars" onChange="checkPasswordMatch();"> <span id="msg2"></span>
                         <div class="validate"></div>
                     </div>
                 </div>
@@ -178,7 +178,7 @@
                 </div>
 
 
-                <button type="submit" class="btn btn-primary btn-lg mt-4 d-flex mx-auto">Sign up</button>
+                <button type="submit" class="btn btn-primary btn-lg mt-4 d-flex mx-auto" onclick="checkPassword()">Sign up</button>
             </form>
         </div>
         </div>
