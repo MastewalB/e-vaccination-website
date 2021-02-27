@@ -82,7 +82,7 @@ class VaccineSession {
         return ["Doc/01", "Doc/05", "Doc/07"];
     }
 
-    /*
+    /**
     * Function to convert the week index 
     * @param {Number} - The index value from 0 to 6 
     */
@@ -93,13 +93,18 @@ class VaccineSession {
 
     }
 
-    /*
+    /** 
     * Sets a duration for the Vaccine Session
     * @param {Number} duration - Is the number of days of the Session
     */
     set_duration(duration) {
         this.duration = duration;
     }
+
+    /**
+     * Controls the isFull attribute of the class
+     * @param {Number} day - is the nth day of the vaccine session
+     */
 
     set_full(day) {
         let day_total = 0;
