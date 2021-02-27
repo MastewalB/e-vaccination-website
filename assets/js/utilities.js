@@ -157,4 +157,20 @@ class VaccineSession {
         return token;
     }
 
+    /**
+    * Function generates a token/serial tag 
+    * @param {String} string - is the prefix that appears on the beginning of the string
+    * @param {Number} day - The nth day of the vaccine session
+    * @param {Number} doc_index - The index of the Doctor assigned on the nth day array
+    * @param {tag} tag - The nth tag on the doctor's tag list on the specific nth day
+    * @return {String} token - A concatenation of the parameters to generate a unique serial identification 
+     */
+    generate_token(string, day, doc_index, tag) {
+        function addZero(i) {
+            if (i < 10) { i = "0" + i } // add zero in front of numbers < 10
+            return i;
+        }
+        return `${string}/${addZero(day)}-${addZero(doc_index)}/${addZero(tag)}`;
+    }
+
 }
