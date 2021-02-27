@@ -116,4 +116,45 @@ class VaccineSession {
         }
     }
 
+    /**
+    *  Assigns a patient to a healthworker 
+    * @param {Object} patient_info - The information necessary for the doctor passed here
+    * @param {Number} day_value - The day in the vaccine session order e.g. day 03 of the session
+    * @param {Number} tag_number optional - The number of patiets to take the vaccine/The number of tags that are going to be added   
+    * @return {String} token - The special serial token given to the patient/user as an identification upon the vaccination day 
+     */
+    add_doctor_tag(patient_info, day_value = undefined, tag_number = 1) {
+
+        let token = "";
+        if (day_value === undefined) {
+
+        }
+        for (let i = 1; i <= this.duration; i++) {
+            if (!this.day.get(i).isFull) {
+
+                let index = 0;
+                let min = this.day.get(i).doctors[0].tag;
+                let len = this.day.get(i).doctors.length
+                for (let j = 1; j < len; j++) {
+                    if (this.day.get(i).doctors[j].tag < min) {
+                        index = j;
+                        min = this.day.get(i).doctors[j].tag;
+
+                    }
+                }
+
+
+                this.day.get(i).doctors[index].tag += tag_number;
+                let tag = this.day.get(i).doctors[index].tag;
+                this.day.get(i).doctors[index].patients[tag - 1].info = patient_info;
+                this.day.get(i).total += tag_number;
+                token = this.generate_token(this.name, i, index, tag);
+                this.set_full(i);
+                break;
+
+            }
+        }
+        return token;
+    }
+
 }
