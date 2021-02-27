@@ -140,7 +140,7 @@ form.addEventListener("submit", function(event){
         // sth
     }).then(function(){
         db.users.put({
-            username: person.phone, 
+            username: person.email, 
             user: person
            }).then(function(){
                console.log("Database created and added to users table")
