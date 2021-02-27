@@ -93,3 +93,22 @@ function checkVaccineUpdate(age){
         console.log("Error", e)
     })
 }
+
+vaccineContainer.addEventListener("click", e=>{
+    console.log(e.target.id)
+    if (e.target.id == "applyBtn"){
+        console.log("signed up for vaccine")
+        let currUser = localStorage.getItem("currentUser")
+        db.users.update(username=currUser, {password: "w@r.k"}).then(function (updated) {
+            if (updated){
+                console.log ("Friend number 2 was renamed to Number 2");
+            }else{
+                console.log ("Nothing was updated - there were no friend with primary key: 2");
+            }
+            
+            }).catch(e =>{
+                console.log(e)
+            });
+    }
+
+})
