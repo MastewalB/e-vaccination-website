@@ -101,4 +101,14 @@ class VaccineSession {
         this.duration = duration;
     }
 
+    set_full(day) {
+        let day_total = 0;
+        for (let i = 0; i < this.day.get(day).doctors.length; i++) {
+            day_total += this.day.get(day).doctors[i].tag;
+        }
+        if (day_total > this.day.get(day).doctors.length * this.max_tag_per_doctor) {
+            this.day.get(day).isFull = true;
+        }
+    }
+
 }
