@@ -40,6 +40,19 @@ class VaccineSession {
 
 
     /**
+     * This function creates an empty object for the vaccine session
+     */
+    populate_day() {
+        for (let i = 1; i <= this.duration; i++) {
+            this.day.set(i, {
+                isFull: false,
+                total: 0,
+                doctors: [...this.create_doctors_object(this.todays_doctors(this.today(i)))]
+            });
+        }
+    }
+
+    /**
     * Creates a doctors object with id, tag, and patiens attribute after accepting their list from the Shift provider
     * @param {Array} array - This is the list of doctors
     * @return {Array} mapped - This array contains the list of Doctor objects with necessary attributes
