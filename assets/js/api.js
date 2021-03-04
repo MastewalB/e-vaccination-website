@@ -11,3 +11,8 @@ async function fetchNews(url) {
     return news;
   
   }
+
+  fetchNews(url).then(news => {
+    console.log(news);
+  });
+  
