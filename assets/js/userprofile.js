@@ -115,6 +115,19 @@ vaccineContainer.addEventListener("click", e=>{
 
 })
 
+vaccineContainer.addEventListener("click", e=>{
+    console.log(e.target.id)
+    if (e.target.id == "applyBtn"){
+        console.log("signed up for vaccine")
+        console.log("button clicked");
+        // display the popup form 
+        popup.style.display="block";
+        popupBtn.setAttribute("data-id", e.target.parentElement.parentElement.dataset.id)
+        // console.log(e.target.parentElement.parentElement.dataset.id, "***********")
+        // get values from the popup form 
+
+    }
+
 // close the popup form
 close.addEventListener('click', () =>{
     popup.style.display="none";
