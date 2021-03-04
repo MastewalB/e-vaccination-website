@@ -113,6 +113,29 @@ function checkAppointement(){
                         console.log(vaccineRegistrationRecord[0])
                         dbv.vaccines.get(vaccineRegistrationRecord[0], v =>{
                             return v
+
+                        }).then(function (vac){
+                                
+                            console.log("here&&&&&&&&&&&", vaccineRegistrationRecord[1])
+                            title = vac.vaccine_name
+                            desc = vac. description
+                            appointmentContainer.innerHTML += appointmentTemplate(title, vaccineRegistrationRecord[1], desc)
+                        })
+                    })
+                    
+                }
+                console.log("Read from table and updated")
+                console.log(user.user.vaccine_alert.length)
+            
+        }else{
+            console.log("User name Not Found!")
+        }
+    
+       })
+
+
+}
+checkAppointement()
 vaccineContainer.addEventListener("click", e=>{
     console.log(e.target.id)
     if (e.target.id == "applyBtn"){
