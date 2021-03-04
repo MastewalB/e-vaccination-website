@@ -4,7 +4,9 @@ const vaccineContainer = document.querySelector(".row.recommended_vaccines_conta
 
 const availableContainer = document.querySelector(".row.available_vaccines_container");
 const notification = document.querySelector("#notification");
-
+const close = document.querySelector('.popup-close');
+const popup = document.querySelector(".popup-wrapper")
+const popupBtn = document.querySelector('#popUpBtn')
 
 
 
