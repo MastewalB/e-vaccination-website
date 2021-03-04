@@ -49,7 +49,9 @@ function load_news() {
       `
             ;
             });
-        }
+        
+      postDiv3.innerHTML = output;
+    }
     }).catch(function (err) {
         console.log(err);
     });
