@@ -42,7 +42,26 @@ function appointmentTemplate(title = "", date = "", desc = ""){
                               
                           </div>
                       </div>`
-        
+                    }else {
+                        output = `
+                            <div class="card ">
+                                      <div class="card-header " id="app">
+                                          <h4 class="card-title">${title}</h4>
+                                          <p class="card-category text-muted text-sm">On ${date}</p>
+                                          <p class="card-category">${desc}</p>
+                                      </div>
+                                      <div class="card-body ">
+                                          
+                                      </div>
+                                      <div class="card-footer ">
+                                          
+                                          
+                                      </div>
+                                  </div>
+                    `
+                    }
+                    return output
+                }
 
 function getAge(birthdate){
     let currentDate = new Date()
