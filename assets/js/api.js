@@ -5,38 +5,39 @@ var url = 'http://newsapi.org/v2/top-headlines?country=us&category=health&apiKey
 
 async function fetchNews(url) {
     const response = await fetch(url, {
-      mode: 'cors',
+        mode: 'cors',
     });
     const news = await response.json()
     return news;
-  
-  }
 
-  fetchNews(url).then(news => {
+}
+
+fetchNews(url).then(news => {
     console.log(news);
-  });
-  
-  function load_news() {
+});
+
+function load_news() {
     fetchNews(url).then((posts) => {
-      if (posts.status === "ok") {
-        let articles = posts.articles
-        let output = '';
-        articles.forEach(function (post) {
-  
+        if (posts.status === "ok") {
+            let articles = posts.articles
+            let output = '';
+            articles.forEach(function (post) {
 
-            let img_src = "";
 
-            post?.urlToImage || "./assets/img/hero-bg.jpg";
-            let desc = post?.description || "";
-    
-            output += `
+                let img_src = "";
+
+                post?.urlToImage || "./assets/img/hero-bg.jpg";
+                let desc = post?.description || "";
+
+                output += `
             <div class = "container">
             <div class="col-md-10 form-group mt-3 mt-md-2">
             <div class="row">
             <div class="card-group">
-        });
-      }
+            `;
+            });
+        }
     }).catch(function (err) {
-      console.log(err);
+        console.log(err);
     });
-  }
+}
