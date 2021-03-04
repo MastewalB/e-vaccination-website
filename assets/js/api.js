@@ -16,3 +16,16 @@ async function fetchNews(url) {
     console.log(news);
   });
   
+  function load_news() {
+    fetchNews(url).then((posts) => {
+      if (posts.status === "ok") {
+        let articles = posts.articles
+        let output = '';
+        articles.forEach(function (post) {
+  
+        });
+      }
+    }).catch(function (err) {
+      console.log(err);
+    });
+  }
