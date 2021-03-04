@@ -36,6 +36,8 @@ function load_news() {
             <div class="card-group">
             <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="${img_src}"  alt="Card image cap">
+            <div class="card-body">
+      <h5 class="card-title">${post.title}</h5>
             `;
             });
         }
