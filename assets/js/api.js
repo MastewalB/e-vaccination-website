@@ -56,3 +56,15 @@ function load_news() {
         console.log(err);
     });
 }
+function search() {
+    console.log("Search entered");
+    postDiv3.innerHTML = "";
+    fetchNews(url).then(function (posts) {
+      if (posts.status === "ok") {
+        let articles = posts.articles
+        //iterate over each post [100 posts]
+        let output = '';
+        articles.forEach(function (post) {
+          console.log(searchQuery.value)
+          if (post.title.toLowerCase().includes(searchQuery.value)) {
+            console.log("Post Found")
