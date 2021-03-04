@@ -193,21 +193,69 @@ vaccineContainer.addEventListener("click", e=>{
 
 })
 
-vaccineContainer.addEventListener("click", e=>{
-    console.log(e.target.id)
-    if (e.target.id == "applyBtn"){
-        console.log("signed up for vaccine")
-        console.log("button clicked");
-        // display the popup form 
-        popup.style.display="block";
-        popupBtn.setAttribute("data-id", e.target.parentElement.parentElement.dataset.id)
-        // console.log(e.target.parentElement.parentElement.dataset.id, "***********")
-        // get values from the popup form 
-
-    }
-
 // close the popup form
 close.addEventListener('click', () =>{
     popup.style.display="none";
 });
+// Update pending vacine array upon succesful addition 
+function updateUserPendingVaccineInfo(currUser, newValue){
+    db.users.update(username=currUser, {pending_vaccinations: newValue}).then(function (updated) {
+        if (updated){
+            console.log ("DB updated");
+        }else{
+            console.log ("Nothing was updated");
+        }
+        
+        }).catch(e =>{
+            console.log(e)
+        });
+}
+// get value from the popup form 
+popupBtn.addEventListener('click', e => {
+    e.preventDefault()
+    const schedule = {
+        vaccineRegistered: e.target.dataset.id,
+        userProfile : localStorage.getItem("currentUser"),
+        alternatePhone : altPhone.value.trim(),
+        appointemntDate : prefferedDate.value,
+        userAddedMssg : userMssg.value,
+        date : new Date(),
+        userAlcoholConsumption : alcoholConsumption.value,
+        userTobaccoConsumption : tobaccoConsumption.value,
+        userSymptoms : currentSymptoms.value
+    }
+    const session = new VaccineSession()
+    session.patient_info = schedule
+    session.populate_day()
+    session.add_doctor_tag(schedule)
+    session.updateDatabase(session)
+    db.transaction('rw', db.users, function () { 
+        // sth
+    })
+    .then(function(){
+        let currUser = localStorage.getItem("currentUser")
+        db.users.get(currUser, user=>{
+            return user
+           
+           }).then(function(user ){
+            if (user){  
+                    pendingarr = user.user.pending_vaccinations
+                    newPending = pendingarr
+                    newPending.push(e.target.dataset.id)
+                    console.log(schedule.appointemntDate, "**********", )
+                    updateUserPendingVaccineInfo(currUser, [newPending, Date()])
+                
+            }else{
+                console.log("User name Not Found!")
+            }
+            
+           })
+    
+    }).catch(e =>{
+        console.log("Error", e)
+    })
 
+
+    
+    console.log("SessionDB added")
+})
