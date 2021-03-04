@@ -114,3 +114,8 @@ vaccineContainer.addEventListener("click", e=>{
     }
 
 })
+
+// close the popup form
+close.addEventListener('click', () =>{
+    popup.style.display="none";
+});
