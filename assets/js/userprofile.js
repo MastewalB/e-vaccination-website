@@ -95,7 +95,24 @@ function checkVaccineUpdate(age){
         console.log("Error", e)
     })
 }
-
+function checkAppointement(){
+    
+    let currUser = localStorage.getItem("currentUser")
+    db.users.get(currUser, user=>{
+        return user
+       
+       }).then(function(user ){
+        if (user){  
+            
+                // *********************************************************
+                // display on to the user html page 
+                console.log(user.pending_vaccinations, "lengthhhh")
+                if (user.pending_vaccinations.length > 0){
+                    console.log("USERRRR")
+                    user.pending_vaccinations.forEach (vaccineRegistrationRecord =>{
+                        console.log(vaccineRegistrationRecord[0])
+                        dbv.vaccines.get(vaccineRegistrationRecord[0], v =>{
+                            return v
 vaccineContainer.addEventListener("click", e=>{
     console.log(e.target.id)
     if (e.target.id == "applyBtn"){
@@ -132,3 +149,4 @@ vaccineContainer.addEventListener("click", e=>{
 close.addEventListener('click', () =>{
     popup.style.display="none";
 });
+
