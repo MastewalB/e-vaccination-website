@@ -38,7 +38,14 @@ function load_news() {
             <img class="card-img-top" src="${img_src}"  alt="Card image cap">
             <div class="card-body">
       <h5 class="card-title">${post.title}</h5>
-      <p class="card-text">${desc}</p>      
+      <p class="card-text">${desc}</p> 
+      <button class="btn btn-primary"><a href="${post.url}" target="_blank" style="color: white; ">Read more</a> </button>
+    </div>
+  </div>
+  </div>
+
+  </div>
+  </div>     
       `
             ;
             });
