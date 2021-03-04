@@ -68,3 +68,34 @@ function search() {
           console.log(searchQuery.value)
           if (post.title.toLowerCase().includes(searchQuery.value)) {
             console.log("Post Found")
+            let img_src = post?.urlToImage || "./assets/img/hero-bg.jpg";
+            let desc = post?.description || "";
+  
+  
+            output += `
+            <div class = "container">
+            <div class="col-md-10 form-group mt-3 mt-md-2">
+            <div class="row">
+            <div class="card-group">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="${img_src}"  alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">${post.title}</h5>
+          <p class="card-text">${desc}</p>
+          <button class="btn btn-primary"><a href="${post.url}" target="_blank" style="color: white; ">Read more</a> </button>
+        </div>
+      </div>
+      </div>
+    
+      </div>
+      </div>
+                    `;
+          }
+        });
+        postDiv3.innerHTML = output;
+    }
+  })
+    .catch(function (err) {
+      console.log(err);
+    });
+}
