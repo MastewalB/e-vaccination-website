@@ -25,6 +25,25 @@ function vaccineTemplate(imgurl, description_string, title_string, vaccineid){
     return template
 }
 
+function appointmentTemplate(title = "", date = "", desc = ""){
+    
+    if (title = ""){
+        output = `
+            <div class="card ">
+                          <div class="card-header " id="app">
+                              <h4 class="card-title"></h4>
+                              <p class="card-category">You dont have any appointments yet </p>
+                          </div>
+                          <div class="card-body ">
+                              
+                          </div>
+                          <div class="card-footer ">
+                              
+                              
+                          </div>
+                      </div>`
+        
+
 function getAge(birthdate){
     let currentDate = new Date()
     var timestamp = Date.parse(birthdate);
