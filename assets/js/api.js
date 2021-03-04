@@ -23,6 +23,17 @@ async function fetchNews(url) {
         let output = '';
         articles.forEach(function (post) {
   
+
+            let img_src = "";
+
+            post?.urlToImage || "./assets/img/hero-bg.jpg";
+            let desc = post?.description || "";
+    
+            output += `
+            <div class = "container">
+            <div class="col-md-10 form-group mt-3 mt-md-2">
+            <div class="row">
+            <div class="card-group">
         });
       }
     }).catch(function (err) {
