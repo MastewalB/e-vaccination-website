@@ -7,7 +7,12 @@ const notification = document.querySelector("#notification");
 const close = document.querySelector('.popup-close');
 const popup = document.querySelector(".popup-wrapper")
 const popupBtn = document.querySelector('#popUpBtn')
-
+const prefferedDate = document.querySelector('#selectedDate')
+const altPhone = document.querySelector('#altPhone')
+const userMssg = document.querySelector('#userMssg')
+const alcoholConsumption = document.querySelector('#alcoholConsumption')
+const tobaccoConsumption = document.querySelector('#tobaccoConsumption')
+const currentSymptoms = document.querySelector('#currentSymptoms')
 const appointmentContainer = document.querySelector("#appointment")
 
 function vaccineTemplate(imgurl, description_string, title_string, vaccineid){ 
@@ -88,8 +93,6 @@ db.transaction('rw', db.users, function () {
                 brandTitle.innerHTML = user.user.name
                 let user_age = getAge(user.user.birthdate)
                 checkVaccineUpdate(user_age)
-                console.log("Read from table and updated")
-                console.log(user.user.vaccine_alert.length)
             
         }else{
             console.log("User name Not Found!")
