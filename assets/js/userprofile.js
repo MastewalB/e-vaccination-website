@@ -8,7 +8,7 @@ const close = document.querySelector('.popup-close');
 const popup = document.querySelector(".popup-wrapper")
 const popupBtn = document.querySelector('#popUpBtn')
 
-
+const appointmentContainer = document.querySelector("#appointment")
 
 function vaccineTemplate(imgurl, description_string, title_string, vaccineid){ 
     const template = 
