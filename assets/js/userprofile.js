@@ -4,9 +4,16 @@ const vaccineContainer = document.querySelector(".row.recommended_vaccines_conta
 
 const availableContainer = document.querySelector(".row.available_vaccines_container");
 const notification = document.querySelector("#notification");
-
-
-
+const close = document.querySelector('.popup-close');
+const popup = document.querySelector(".popup-wrapper")
+const popupBtn = document.querySelector('#popUpBtn')
+const prefferedDate = document.querySelector('#selectedDate')
+const altPhone = document.querySelector('#altPhone')
+const userMssg = document.querySelector('#userMssg')
+const alcoholConsumption = document.querySelector('#alcoholConsumption')
+const tobaccoConsumption = document.querySelector('#tobaccoConsumption')
+const currentSymptoms = document.querySelector('#currentSymptoms')
+const appointmentContainer = document.querySelector("#appointment")
 
 function vaccineTemplate(imgurl, description_string, title_string, vaccineid){ 
     const template = 
@@ -22,6 +29,44 @@ function vaccineTemplate(imgurl, description_string, title_string, vaccineid){
 
     return template
 }
+
+function appointmentTemplate(title = "", date = "", desc = ""){
+    
+    if (title = ""){
+        output = `
+            <div class="card ">
+                          <div class="card-header " id="app">
+                              <h4 class="card-title"></h4>
+                              <p class="card-category">You dont have any appointments yet </p>
+                          </div>
+                          <div class="card-body ">
+                              
+                          </div>
+                          <div class="card-footer ">
+                              
+                              
+                          </div>
+                      </div>`
+                    }else {
+                        output = `
+                            <div class="card ">
+                                      <div class="card-header " id="app">
+                                          <h4 class="card-title">${title}</h4>
+                                          <p class="card-category text-muted text-sm">On ${date}</p>
+                                          <p class="card-category">${desc}</p>
+                                      </div>
+                                      <div class="card-body ">
+                                          
+                                      </div>
+                                      <div class="card-footer ">
+                                          
+                                          
+                                      </div>
+                                  </div>
+                    `
+                    }
+                    return output
+                }
 
 function getAge(birthdate){
     let currentDate = new Date()
@@ -48,8 +93,6 @@ db.transaction('rw', db.users, function () {
                 brandTitle.innerHTML = user.user.name
                 let user_age = getAge(user.user.birthdate)
                 checkVaccineUpdate(user_age)
-                console.log("Read from table and updated")
-                console.log(user.user.vaccine_alert.length)
             
         }else{
             console.log("User name Not Found!")
@@ -93,7 +136,47 @@ function checkVaccineUpdate(age){
         console.log("Error", e)
     })
 }
+function checkAppointement(){
+    
+    let currUser = localStorage.getItem("currentUser")
+    db.users.get(currUser, user=>{
+        return user
+       
+       }).then(function(user ){
+        if (user){  
+            
+                // *********************************************************
+                // display on to the user html page 
+                console.log(user.pending_vaccinations, "lengthhhh")
+                if (user.pending_vaccinations.length > 0){
+                    console.log("USERRRR")
+                    user.pending_vaccinations.forEach (vaccineRegistrationRecord =>{
+                        console.log(vaccineRegistrationRecord[0])
+                        dbv.vaccines.get(vaccineRegistrationRecord[0], v =>{
+                            return v
 
+                        }).then(function (vac){
+                                
+                            console.log("here&&&&&&&&&&&", vaccineRegistrationRecord[1])
+                            title = vac.vaccine_name
+                            desc = vac. description
+                            appointmentContainer.innerHTML += appointmentTemplate(title, vaccineRegistrationRecord[1], desc)
+                        })
+                    })
+                    
+                }
+                console.log("Read from table and updated")
+                console.log(user.user.vaccine_alert.length)
+            
+        }else{
+            console.log("User name Not Found!")
+        }
+    
+       })
+
+
+}
+checkAppointement()
 vaccineContainer.addEventListener("click", e=>{
     console.log(e.target.id)
     if (e.target.id == "applyBtn"){
@@ -111,4 +194,71 @@ vaccineContainer.addEventListener("click", e=>{
             });
     }
 
+})
+
+// close the popup form
+close.addEventListener('click', () =>{
+    popup.style.display="none";
+});
+// Update pending vacine array upon succesful addition 
+function updateUserPendingVaccineInfo(currUser, newValue){
+    db.users.update(username=currUser, {pending_vaccinations: newValue}).then(function (updated) {
+        if (updated){
+            console.log ("DB updated");
+        }else{
+            console.log ("Nothing was updated");
+        }
+        
+        }).catch(e =>{
+            console.log(e)
+        });
+}
+// get value from the popup form 
+popupBtn.addEventListener('click', e => {
+    e.preventDefault()
+    const schedule = {
+        vaccineRegistered: e.target.dataset.id,
+        userProfile : localStorage.getItem("currentUser"),
+        alternatePhone : altPhone.value.trim(),
+        appointemntDate : prefferedDate.value,
+        userAddedMssg : userMssg.value,
+        date : new Date(),
+        userAlcoholConsumption : alcoholConsumption.value,
+        userTobaccoConsumption : tobaccoConsumption.value,
+        userSymptoms : currentSymptoms.value
+    }
+    const session = new VaccineSession()
+    session.patient_info = schedule
+    session.populate_day()
+    session.add_doctor_tag(schedule)
+    session.updateDatabase(session)
+    db.transaction('rw', db.users, function () { 
+        // sth
+    })
+    .then(function(){
+        let currUser = localStorage.getItem("currentUser")
+        db.users.get(currUser, user=>{
+            return user
+           
+           }).then(function(user ){
+            if (user){  
+                    pendingarr = user.user.pending_vaccinations
+                    newPending = pendingarr
+                    newPending.push(e.target.dataset.id)
+                    console.log(schedule.appointemntDate, "**********", )
+                    updateUserPendingVaccineInfo(currUser, [newPending, Date()])
+                
+            }else{
+                console.log("User name Not Found!")
+            }
+            
+           })
+    
+    }).catch(e =>{
+        console.log("Error", e)
+    })
+
+
+    
+    console.log("SessionDB added")
 })

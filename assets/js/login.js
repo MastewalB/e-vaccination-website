@@ -14,33 +14,98 @@ if (loginForm) {
 
 
 
-function login() {
-    db.transaction('rw', db.users, function () {
-        // sth
-    })
-        .then(function () {
-            let inputUserNameData = inputUserName.value.trim()
-            let inputUserPasswordData = inputUserPassword.value.trim()
-            db.users.get({ username: inputUserNameData }, user => {
-                return user
+function login(){
 
-            }).then(function (user) {
-                if (user) {
-                    if (inputUserPasswordData == user.user.password) {
+    let inputUserNameData = inputUserName.value.trim()
+    let inputUserPasswordData = inputUserPassword.value.trim()
+    if (inputUserNameData.includes("@ykstuff.com")){
+        db.transaction('rw', db.workers, function () { 
+            // sth
+        })
+        .then(function(){
+            db.workers.get({username:inputUserNameData}, user=>{
+                return user
+               
+               }).then(function(user ){
+                if (user){
+                    if (inputUserPasswordData == user.user.password){
                         console.log("Logged in")
-                        localStorage.setItem("currentUser", inputUserNameData)
-                    } else {
+                        location.replace("workers.html")
+                        localStorage.setItem("currentUser", inputUserNameData) 
+                        // brandTitle.innerHTML = user.user.name
+                    }else{
                         console.log("Password and username didnt match!!!!")
                     }
-                } else {
+                }else{
                     console.log("User name Not Found!")
                 }
-
-            })
-
-        }).catch(e => {
+                
+               })
+            
+        }).catch(e =>{
             console.log("Error", e)
         })
+
+    }else if (inputUserNameData.includes("@ykadmin.com")){
+        console.log("ADmin")
+        db.transaction('rw', db.admin, function () { 
+            
+        })
+        .then(function(){
+            db.admin.get({username:inputUserNameData}, user=>{
+                return user
+               
+               }).then(function(user ){
+                if (user){
+                    console.log("here")
+                    if (inputUserPasswordData == user.admin.password){
+                        console.log("Logged in")
+                        location.replace("Admin.html")
+                        localStorage.setItem("currentUser", inputUserNameData) 
+                        // brandTitle.innerHTML = user.user.name
+                    }else{
+                        console.log("Password and username didnt match!!!!")
+                    }
+                }else{
+                    console.log("User name Not Found!")
+                }
+                
+               })
+            
+        }).catch(e =>{
+            console.log("Error", e)
+        })
+
+    }else{
+        db.transaction('rw', db.users, function () { 
+            // sth
+        })
+        .then(function(){
+            db.users.get({username:inputUserNameData}, user=>{
+                return user
+               
+               }).then(function(user ){
+                if (user){
+                    if (inputUserPasswordData == user.user.password){
+                        console.log("Logged in")
+                        location.replace("user.html")
+                        localStorage.setItem("currentUser", inputUserNameData) 
+                        // brandTitle.innerHTML = user.user.name
+                    }else{
+                        console.log("Password and username didnt match!!!!")
+                    }
+                }else{
+                    console.log("User name Not Found!")
+                }
+                
+               })
+            
+        }).catch(e =>{
+            console.log("Error", e)
+        })
+
+    }
+    
 }
 
 function logout() {
