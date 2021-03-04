@@ -42,3 +42,32 @@ session_db.transaction('rw', session_db.vaccine_session, function () {
     })
 })
 */
+db.transaction('rw', db.admin, function () { 
+    // sth
+}).then(function(){
+    
+    var user= "Meti@ykadmin.com"
+
+    var adminObj = {
+        name :"Meti",
+        phonenumber :"0912234567",
+        birthdate :"21/05/1986",
+        password :"ykforever",
+        email :"metiadane@ykadmin",
+        gender :"Female",        
+        department :"Vaccine",
+        worker_id :"meti@ykadmin",  
+        staffMemebers:[]
+    }
+    db.admin.put({
+        username: user, 
+        admin: adminObj
+       }).then(function(){
+           console.log("Database created and added to users table")
+           localStorage.setItem("admin", user)
+        //    login()
+       }).catch(e =>{
+           console.log("Error", e)
+       })
+});
+localStorage.setItem("admin", "Meti@ykadmin.com")
