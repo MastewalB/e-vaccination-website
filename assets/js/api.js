@@ -1,7 +1,18 @@
 let postDiv3 = document.querySelector('#posts')
-const btn_search = document.querySelector("#search")
-const searchQuery = document.querySelector("#search_query")
+let btn_search = document.getElementById("search")
+let searchQuery = document.getElementById("search_query")
 var url = 'http://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=a862f33fff6545a994a4d8bce20be778';
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    load_news();
+});
+btn_search.addEventListener('click', () => {
+    console.log("event listener")
+    search();
+});
+
 
 async function fetchNews(url) {
     const response = await fetch(url, {
@@ -12,9 +23,6 @@ async function fetchNews(url) {
 
 }
 
-fetchNews(url).then(news => {
-    console.log(news);
-});
 
 function load_news() {
     fetchNews(url).then((posts) => {
@@ -24,9 +32,8 @@ function load_news() {
             articles.forEach(function (post) {
 
 
-                let img_src = "";
+                let img_src = post?.urlToImage || "./assets/img/hero-bg.jpg";;
 
-                post?.urlToImage || "./assets/img/hero-bg.jpg";
                 let desc = post?.description || "";
 
                 output += `
@@ -47,11 +54,11 @@ function load_news() {
   </div>
   </div>     
       `
-            ;
+                    ;
             });
-        
-      postDiv3.innerHTML = output;
-    }
+
+            postDiv3.innerHTML = output;
+        }
     }).catch(function (err) {
         console.log(err);
     });
@@ -60,19 +67,19 @@ function search() {
     console.log("Search entered");
     postDiv3.innerHTML = "";
     fetchNews(url).then(function (posts) {
-      if (posts.status === "ok") {
-        let articles = posts.articles
-        //iterate over each post [100 posts]
-        let output = '';
-        articles.forEach(function (post) {
-          console.log(searchQuery.value)
-          if (post.title.toLowerCase().includes(searchQuery.value)) {
-            console.log("Post Found")
-            let img_src = post?.urlToImage || "./assets/img/hero-bg.jpg";
-            let desc = post?.description || "";
-  
-  
-            output += `
+        if (posts.status === "ok") {
+            let articles = posts.articles
+
+            let output = '';
+            articles.forEach(function (post) {
+                console.log(searchQuery.value)
+                if (post.title.toLowerCase().includes(searchQuery.value)) {
+                    console.log("Post Found")
+                    let img_src = post?.urlToImage || "./assets/img/hero-bg.jpg";
+                    let desc = post?.description || "";
+
+
+                    output += `
             <div class = "container">
             <div class="col-md-10 form-group mt-3 mt-md-2">
             <div class="row">
@@ -90,12 +97,12 @@ function search() {
       </div>
       </div>
                     `;
-          }
+                }
+            });
+            postDiv3.innerHTML = output;
+        }
+    })
+        .catch(function (err) {
+            console.log(err);
         });
-        postDiv3.innerHTML = output;
-    }
-  })
-    .catch(function (err) {
-      console.log(err);
-    });
 }
