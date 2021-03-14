@@ -71,3 +71,30 @@ db.transaction('rw', db.workers, function () {
   }).catch(e =>{
     console.log("Error", e)
   })
+
+  function setStatus(){
+    const dateField = document.querySelector("#scheduledDate")
+    const patient_Idf = document.querySelector("#patient_id_field")
+    const btn = document.querySelector(".statusBtn")
+
+    let currentDate = new Date()
+    var timestamp = Date.parse(dateField.innerText);
+    var scheduledDate = new Date(timestamp);
+    const day_diff = currentDate.getDate() - scheduledDate.getDate()
+    if (day_diff < 0){
+      alert("you must treat the pateient first!")
+    }else if( day_diff >= 1){
+      alert("you missed the patient's apointment. Please report to your Supervisor")
+    }else{
+              
+              btn.disabled = true
+              btn.classList.remove("statusBtn")
+
+              sessiondb.sessions.update()
+              console.log ("Task Completed");
+  
+              alert("status successfully changed")
+          
+    }
+  
+}
