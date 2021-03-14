@@ -20,3 +20,29 @@ function createTaskRecordTemplate(){
   </tr>`
 
 }
+
+// update Worker page
+db.transaction('rw', db.workers, function () { 
+    // sth
+  })
+  .then(function(){
+    let currUser = localStorage.getItem("currentDoctor")
+    db.workers.get(currUser, user=>{
+        return user
+       
+       }).then(function(user ){
+        if (user){  
+                // *********************************************************
+                // display on to the user html page 
+                brandTitle.innerHTML = user.worker.name
+                headerGreet.innerHTML += user.worker.name
+            
+        }else{
+            console.log("User name Not Found!")
+        }
+        
+       })
+  
+  }).catch(e =>{
+    console.log("Error", e)
+  })
