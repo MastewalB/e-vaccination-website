@@ -138,41 +138,18 @@ function checkVaccineUpdate(age){
 }
 function checkAppointement(){
     
-    let currUser = localStorage.getItem("currentUser")
-    db.users.get(currUser, user=>{
-        return user
-       
-       }).then(function(user ){
-        if (user){  
-            
-                // *********************************************************
-                // display on to the user html page 
-                console.log(user.pending_vaccinations, "lengthhhh")
-                if (user.pending_vaccinations.length > 0){
-                    console.log("USERRRR")
-                    user.pending_vaccinations.forEach (vaccineRegistrationRecord =>{
-                        console.log(vaccineRegistrationRecord[0])
-                        dbv.vaccines.get(vaccineRegistrationRecord[0], v =>{
-                            return v
-
-                        }).then(function (vac){
-                                
-                            console.log("here&&&&&&&&&&&", vaccineRegistrationRecord[1])
-                            title = vac.vaccine_name
-                            desc = vac. description
-                            appointmentContainer.innerHTML += appointmentTemplate(title, vaccineRegistrationRecord[1], desc)
-                        })
-                    })
-                    
-                }
-                console.log("Read from table and updated")
-                console.log(user.user.vaccine_alert.length)
-            
-        }else{
-            console.log("User name Not Found!")
-        }
     
-       })
+    sessiondb.sessions.where("patientId","session_status")
+    // .between(vaccine.min_age, vaccine.min_age+ 10,true)
+    .equals(localStorage.getItem("currentUser"),"Incomplete",true, true)
+    .each(session => {
+      appointmentTemplate(session.vaccine_ID, session.patient_info.appointemntDate, session.session_status)
+      
+    });
+  
+//   }).catch(e =>{
+//     console.log("Error", e)
+//   })
 
 
 }
