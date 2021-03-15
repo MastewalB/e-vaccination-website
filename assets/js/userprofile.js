@@ -227,38 +227,15 @@ popupBtn.addEventListener('click', e => {
         userTobaccoConsumption : tobaccoConsumption.value,
         userSymptoms : currentSymptoms.value
     }
-    const session = new VaccineSession()
-    session.patient_info = schedule
-    session.populate_day()
-    session.add_doctor_tag(schedule)
-    session.updateDatabase(session)
-    db.transaction('rw', db.users, function () { 
-        // sth
-    })
-    .then(function(){
-        let currUser = localStorage.getItem("currentUser")
-        db.users.get(currUser, user=>{
-            return user
-           
-           }).then(function(user ){
-            if (user){  
-                    pendingarr = user.user.pending_vaccinations
-                    newPending = pendingarr
-                    newPending.push(e.target.dataset.id)
-                    console.log(schedule.appointemntDate, "**********", )
-                    updateUserPendingVaccineInfo(currUser, [newPending, Date()])
-                
-            }else{
-                console.log("User name Not Found!")
-            }
-            
-           })
     
-    }).catch(e =>{
-        console.log("Error", e)
-    })
+    patientId = localStorage.getItem("currentUser")
+    patientInfo = schedule
+    vaccineRegistered = e.target.dataset.id
+    bookAppointment(patientId, patientInfo, vaccineRegistered)
+    
+
 
 
     
-    console.log("SessionDB added")
+    console.log("Successfully applied for vaccine")
 })
