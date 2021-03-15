@@ -30,4 +30,13 @@ const sessionStartDay = document.querySelector("#startDate")
 const duration = document.querySelector("#duration")
 const vaccineName = document.querySelector("#vaccine_name")
 
+// popup form 
+addBtn.addEventListener("click", ()=>{
 
+    popup.style.display="block";
+  })
+  
+  // close the popup form
+  close.addEventListener('click', () =>{
+    popup.style.display="none";
+  });
