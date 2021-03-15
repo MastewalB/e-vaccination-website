@@ -111,10 +111,11 @@ function checkVaccineUpdate(age){
         // sth
     })
     .then(function(){
-        dbv.vaccines.where("min_age")
-        .between(0, 85,true)
+        dbv.vaccines.where("active")
+        // .between(vaccine.min_age, vaccine.min_age+ 10,true)
+        .equals("true",true)
         .each(vaccine => {
-            if (vaccine.min_age == age){
+            if (age <= vaccine.min_age <= age + 10){
                 console.log("AGee check passed")
                 let template= vaccineTemplate("assets/img/departments-4.jpg", vaccine.description, vaccine.vaccine_name, vaccine.vaccine_name)
                 let recommendedRow = vaccineContainer.querySelector(".row")
