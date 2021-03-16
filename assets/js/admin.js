@@ -136,3 +136,49 @@ row.addEventListener("click", e=>{
     detailsDiv.classList.toggle("hiddenView")
 }
 })
+// show / hide the start session table
+
+startSessionBtn.addEventListener("click", e=>{
+    console.log("CLicked")
+    startSessionFormDiv.classList.toggle("hiddenView")
+  })
+  
+  // populate the vaccines for admin to activate 
+  dbv.transaction('rw',dbv.vaccines, function () { 
+    // sth
+  })
+  .then(function(){
+    dbv.vaccines.where("active")
+    // .between(vaccine.min_age, vaccine.min_age+ 10,true)
+    .equals("false",true)
+    .each(vac => {
+      
+        chooseVaccine.innerHTML += `
+        <option value="${vac.vaccine_name}">${vac.vaccine_name}</option>
+        `  
+    }).catch(error => {
+        console.log(error.stack);
+    });
+  
+  }).catch(e =>{
+    console.log("Error", e)
+  })
+  
+  // activate a session 
+  activateBtn.addEventListener("click", e =>{
+    e.preventDefault()
+    console.log("hey", vaccineName.value)
+    dbv.vaccines.update(vaccine_name=vaccineName.value, {active: "true"}).then(function (updated) {
+        // console.log(vaccine_name, active)
+        if (updated){
+            console.log ("Vaccine Session started");
+            alert( `${vaccineName.value} Vaccine Session started`)
+        }else{
+            console.log ("Vaccine Session not started");
+        }
+                 
+    }).catch(e=>{
+      console.log(e.stack)
+    })
+  })
+  
