@@ -184,7 +184,7 @@ startSessionBtn.addEventListener("click", e=>{
 
   // display active sessions for Admin
 
-sessiondb.sessions.where("session_status")
+sessiondb.vaccinesession.where("session_status")
 .equals("Incomplete",true)
 .each(session => {
   console.log(session.patientId, session.patient_info.appointemntDate) 

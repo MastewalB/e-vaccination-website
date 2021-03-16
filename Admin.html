@@ -2,7 +2,7 @@
 
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon.png">
     <link rel="icon" type="image/png" href="./assets/img/icon.jpg">
@@ -20,7 +20,7 @@
     <link href="./assets/vendor/CSS/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="./assets/vendor/CSS/demo.css" rel="stylesheet" />
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet"/>
     
     
 </head>
@@ -39,28 +39,28 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="Admin.html">
+                        <a class="nav-link" href="#session">
                             <i class="bx bxs-report"></i>
                             <p>Session</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="#status">
                             <i class="bx bxs-report"></i>
                             <p>Status</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="#manage">
                             <i class="bx bxs-report"></i>
-                            <p>Issues</p>
+                            <p>Manage Staff</p>
                         </a>
                     </li>
                     <li>
-                        <!-- <a class="nav-link" href="#message">
+                        <a class="nav-link" href="#managenew">
                             <i class="bx bxs-message-rounded"></i>
-                            <p>Messaging</p>
-                        </a> -->
+                            <p>Add new doctor</p>
+                        </a>
                     </li>
                     <li>
                         <!-- <a class="nav-link" href="./notifications.html">
@@ -106,135 +106,222 @@
             </nav>
             <!-- End Navbar -->
             
-                        <!-- ======= Recommended vaccines section ======= -->
+
+
+  <!-- view current Session -->
+  <section id="session" class="why-us" style="padding: 0px;">
+    <div class="container  counts p-2">
+        <div class="section-title" style="padding: 0px;">
+            <h2>Current Sessions</h2>
+        </div>
+        <table class="table vaccineTable">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">workerID</th>
+                <th scope="col">view details</th>
+              </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+          </table>
+        <br>
+  </section>
+                        <!-- ======= start session  ======= -->
   <section id="why-us" class="why-us" style="padding: 0px;">
     <div class="container  counts p-2">
         <div class="section-title" style="padding: 0px;">
-            <h2>Start Session</h2>
+            <h2 id="startNewSession" class="">Start Session</h2>
           </div>
           <div class="ml-5 mr-5">
-        <form action="">
+        <form action="" class="sessionForm hiddenView">
             <div class="row mb-3">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">Starting Date:</label>
                 <div class="col-sm-10">
-                    <input type="date" name="date" id="birthdate" class="form-control">
+                    <input type="date" name="date" id="startDate" class="form-control">
                 </div>
               </div>
               <div class="row mb-3">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">Vaccination Name:</label>
                 <div class="col-sm-10">
-                    <select class="form-select form-select" aria-label=".form-select example">
+                    <select class="form-select form-select" id="vaccine_name"aria-label=".form-select example" id ="selectVaccines">
                         <option selected>Select Vaccination Name</option>
-                        <option value="1">Polio</option>
-                        <option value="2">Hepatitis B</option>
-                        <option value="3">Measles</option>
                       </select>
                 </div>
               </div>
               <div class="row mb-3">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">Duration:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" placeholder="Enter Duration of the vaccine" aria-label="name" id="duration_vaccine">
+                    <select class="form-select form-select"id="duration" aria-label=".form-select example">
+                        <option selected>Select Days</option>
+                        <option value="1">14</option>
+                        <option value="2">15</option>
+                        <option value="3">16</option>
+                  
+                      </select>
                 </div>
               </div>
               <div class="row mb-3">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">Recommended Age:</label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control" placeholder="Enter minimum age" aria-label="name" id="Recommended_age_minimum">
-                </div>
-                <div class="col-sm-5">
-                    <input type="text" class="form-control" placeholder="Enter Maximum age" aria-label="name" id="Recommended_age_maximum">
+                    <select class="form-select form-select" id="min_age" aria-label=".form-select example">
+                        <option selected>Minimum Age</option>
+                        <option value="1">14</option>
+                        <option value="2">15</option>
+                        <option value="3">16    </option>
+                      </select> 
                 </div>
               </div>
+
+              <button type="submit" class="btn btn-primary btn-lg mt-4 d-flex mx-auto" id="activateBtn">Activate Session</button>
           </form>
         </div>
     </div>
-  </section>
-  <!-- End of Recommended vaccines  -->
-    
-  <section id="why-us" class="why-us" style="padding: 0px;">
+</section>
+  
+  <!-- Status -->
+  <section id="status" class="why-us" style="padding: 0px;">
     <div class="container  counts p-2">
         <div class="section-title" style="padding: 0px;">
-            <h2>Add new Staff member</h2>
+            <h2>Status</h2>
         </div>
+        <div class="ml-5 mr-5 chartDiv">
+            <!-- <div class="adminchart1"></div>
+            <ul class="key">
+                <li>
+                  <strong class="percent red">4%</strong>
+                  <span class="choice">Jump right in, startupfille here I come.</span>
+                </li>
+                <li>
+                  <strong class="percent gray">4%</strong>
+                  <span class="choice">Email back to discuss, flattered and positive.</span>
+                </li>
+                <li>
+                  <strong class="percent purple">6%</strong>
+                  <span class="choice">Respond and say "Thanks but no thanks."</span>
+                </li>
+                <li>
+                  <strong class="percent blue">9%</strong>
+                  <span class="choice">Email back to discuss, all business.</span>
+                </li>
+                <li>
+                  <strong class="percent yellow">31%</strong>
+                  <span class="choice">Email back to discuss, but skeptically.</span>
+                </li>
+                <li>
+                  <strong class="percent orange">46%</strong>
+                  <span class="choice">Delete the email.</span>
+                </li>
+              </ul> -->
+        </div>
+        <br>
+        
+    </div>
+  </section>
+
+<!-- Manage staff -->
+  <section id="manage" class="why-us" style="padding: 0px;">
+    <div class="container  counts p-2">
+        <div class="section-title" style="padding: 0px;">
+            <h2>Manage Stuff</h2>
+
+            <i class="fa fa-plus r-0" id="addWorkerBtn"></i>
+        </div>
+        <table class="table workersTable ">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">workerID</th>
+                <th scope="col">view details</th>
+              </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+          </table>
+        <br>
+  </section>
+  <!-- Add new Stuff  -->
+  <section id="managenew" class="why-us" style="padding: 0px;">
+    <div class="container  counts p-2">
         <div class="popup-wrapper">
 
-            <div class="pop-up">
-                <div class="popup-close">
-                    <i class="fa fa-close"></i>
-                </div>
-                <div class="popup-content">
-                    <form action="" id="popupForm" class="row g-3">
-                        <div class="col-md-6">
-                          <label for="inputEmail4" class="form-label">Name</label>
-                          <input type="text" class="form-control" placeholder="Name" aria-label="name" id="workeradd_name">
-                        </div>
-                        <div class="col-md-6">
-                          <label for="inputPassword4" class="form-label">Phone Number</label>
-                          <input type="tel" class="form-control" id="inputPassword4" id="workeradd_phone_number">
-                        </div>
-                        <div class="col-md-6">
-                          <label for="inputEmail4" class="form-label">Email</label>
-                          <input type="email" class="form-control" id="inputEmail4" id="workeradd_email">
-                        </div>
-                        <div class="col-md-6">
-                          <label for="inputPassword4" class="form-label">Password</label>
-                          <input type="password" class="form-control" id="inputPassword4" id="workeradd_password">
-                        </div>
-                        <div class="col-6">
-                          <label for="date" class="form-label">Gender</label>
-                          <select id="workeradd_gender" class="form-select">
-                              <option selected>Choose...</option>
-                                    <option value="workeradd_Male">Male</option>
-                                    <option value="workeradd_Female"> Female</option>
-                            </select>
-                        </div>
-                        <div class="col-6">
-                          <label for="date" class="form-label">Birthdate</label>
-                          <input type="date" name="date" id="workeradd_birthdate" class="form-control">
-                          <div class="validate"></div>
-                        </div>
-                        <div class="col-md-6">
-                          <label for="inputCity" class="form-label">Department</label>
-                          <input type="text" class="form-control" id="workeradd_department">
-                        </div>
-                        <div class="col-md-4">
-                          <label for="inputState" class="form-label">Subcity</label>
-                          <select id="workeradd_subcity" class="form-select">
+        <div class="section-title" style="padding: 0px;">
+          <h2>Add new Staff member</h2>
+      </div>
+          <div class="pop-up">
+              <div class="popup-close">
+                  <i class="fa fa-close"></i>
+              </div>
+              <div class="popup-content">
+                  <form action="" id="addWorkerForm" class="row g-3">
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Name</label>
+                        <input type="text" class="form-control" placeholder="Name" aria-label="name" id="workeradd_name">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="workeradd_phone_number">
+                      </div>
+                      
+                      <div class="col-6">
+                        <label for="date" class="form-label">Gender</label>
+                        <select id="workeradd_gender" class="form-select">
                             <option selected>Choose...</option>
-                                  <option value="">Sub City</option>
-                                  <option value="workeradd_Kolfe-Keranyo"> Kolfe-Keranyo</option>
-                                  <option value="workeradd_Kirkos"> Kirkos </option>
-                                  <option value="workeradd_Nifas-Silk"> Nifas-Silk </option>
-                                  <option value="workeradd_Gulele"> Gulele </option>
-                                  <option value="workeradd_Yeka"> Yeka </option>
-                                  <option value="workeradd_Lemi-Kura"> Lemi-Kura </option>
-                                  <option value="workeradd_Akaki-Kality"> Akaki-Kality </option>
-                                  <option value="workeradd_Arada">Arada</option>
-                                  <option value="workeradd_Addis-Ketema"> Addis-Ketema </option>
-                                  <option value="workeradd_Lideta"> Lideta </option>
+                                  <option value="Male">Male</option>
+                                  <option value="Female"> Female</option>
                           </select>
+                      </div>
+                      <div class="col-6">
+                        <label for="date" class="form-label">Birthdate</label>
+                        <input type="date" name="date" id="workeradd_birthdate" class="form-control">
+                        <div class="validate"></div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputCity" class="form-label" id = "workeradd_department">Department</label>
+                        <select id="inputCity" class="form-select">
+                            <option selected>Choose...</option>
+                                  <option value="Male">Doctor</option>
+                                  <option value="Female"> Nurse</option>
+                          </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputState" class="form-label">Subcity</label>
+                        <select id="workeradd_subcity" class="form-select">
+                          <option selected>Choose...</option>
+                                <option value="">Sub City</option>
+                                <option value="workeradd_Kolfe-Keranyo"> Kolfe-Keranyo</option>
+                                <option value="workeradd_Kirkos"> Kirkos </option>
+                                <option value="workeradd_Nifas-Silk"> Nifas-Silk </option>
+                                <option value="workeradd_Gulele"> Gulele </option>
+                                <option value="workeradd_Yeka"> Yeka </option>
+                                <option value="workeradd_Lemi-Kura"> Lemi-Kura </option>
+                                <option value="workeradd_Akaki-Kality"> Akaki-Kality </option>
+                                <option value="workeradd_Arada">Arada</option>
+                                <option value="workeradd_Addis-Ketema"> Addis-Ketema </option>
+                                <option value="workeradd_Lideta"> Lideta </option>
+                        </select>
+                      </div>
+                      
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="gridCheck">
                         </div>
-                        <div class="col-md-2">
-                          <label for="inputZip" class="form-label">Worker ID</label>
-                          <input type="text" class="form-control" id="workeradd_worker_id">
-                        </div>
-                        <div class="col-12">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                          </div>
-                        </div>
-                        <div class="col-12">
-                          <button type="submit" class="btn btn-primary">Continue</button>
-                        </div>
+                      </div>
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                      </div>
 
                   </form>
-                </div>
-                
-            </div>
-        </div>
-          <br>
-    </section>
+              </div>
+              
+          </div>
+      </div>
+        <br>
+  </section>
         <!-- Start of the Footer-->
             <footer id="footer">
                 <div class="footer-top">
@@ -282,7 +369,12 @@
     
 </body>
 
-
-</script>
+<script src="https://unpkg.com/dexie/dist/dexie.js"></script>
+    <script src="./assets/js/profile.js"></script>
+    <script src="./assets/js/db.js"></script>
+    <!-- <script src="./assets/js/vaccine.js"></script> -->
+    <script src="./assets/js/vaccinesList.js"></script>
+    <!-- <script src="./assets/js/admin.js"></script> -->
+    <script src="./assets/js/admin.js"></script>
 
 </html>
