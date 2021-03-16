@@ -201,4 +201,48 @@ sessiondb.sessions.where("session_status")
 }).catch(e =>{
 console.log("Error", e)
 })
+
+function generateReport(){
+    output = `<div class="barchart ml-5 mr-5">
+  
+    <table id="q-graph">
+        <caption>Vaccinations</caption>
+        <thead>
+        <tr>
+        <th></th>
+        <th class="sent">Invoiced</th>
+        <th class="paid">Collected</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="qtr" id="q1">
+        <th scope="row revenue">Revenue Generated</th>
+        <td class="sent bar" style="height: 111px;"><p>500</p></td>
+        <td class="paid bar" style="height: 99px;"><p>250</p></td>
+        </tr>
+        <tr class="qtr" id="q2">
+        <th scope="row sessions">Total Sessions</th>
+        <td class="sent bar" style="height: 206px;"><p>30</p></td>
+        <td class="paid bar" style="height: 194px;"><p>30</p></td>
+        </tr>
+        <tr class="qtr" id="q3">
+        <th scope="row users">Active Users</th>
+        <td class="sent female bar" style="height: 259px;"><p>150</p></td>
+        <td class="paid male bar" style="height: 193px;"><p>150</p></td>
+        </tr>
+        <tr class="qtr" id="q4">
+        <th scope="row stuff">active stuff no</th>
+        <td class="sent female bar" style="height: 110px;"><p>150</p></td>
+        <td class="paid male bar" style="height: 195px;"><p>150</p></td>
+        </tr>
+        </tbody>
+        </table>
+        
+        
+            </div>`
+  
+      chartContainer.innerHTML += output
+  }
+  
+  generateReport()
   
