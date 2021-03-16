@@ -88,7 +88,7 @@ function login(){
                 if (user){
                     if (inputUserPasswordData == user.user.password){
                         console.log("Logged in")
-                        location.replace("user.html")
+                        location.replace("User.html")
                         localStorage.setItem("currentUser", inputUserNameData) 
                         // brandTitle.innerHTML = user.user.name
                     }else{

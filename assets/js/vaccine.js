@@ -70,42 +70,42 @@ var vaccinesList= [
     {
        vaccine_name
 : "Chickenpox",
-       min_age: "60",
-     active:"false",  
+       min_age: "20",
+     active:"true",  
      description: "The chickenpox vaccine is a shot that can protect nearly anyone who receives the vaccine from catching chickenpox. It's also called the varicella vaccine, because chickenpox is caused by the varicella-zoster virus. The vaccine is made from a live but weakened, or attenuated, virus."
    },
    {
        vaccine_name
 : "Meningococcal conjugate",
-       min_age: "60",
-     active:"false",  
+       min_age: "22",
+     active:"true",  
      description: "Vaccines can help prevent meningococcal disease, which is any type of illness caused by Neisseria meningitidis bacteria.All 11 to 12 year olds should get a meningococcal conjugate vaccine, with a booster dose at 16 years old. Teens and young adults (16 through 23 year olds) also may get a serogroup B meningococcal vaccine."
    },
     {
        vaccine_name
 : "Tdap",
-       min_age: "240",
-     active:"false",  
+       min_age: "16",
+     active:"true",  
      description: "Tdap vaccine can prevent tetanus, diphtheria, and pertussis. Tdap is only for children 7 years and older, adolescents, and adults. Tdap may be given at the same time as other vaccines."
    },
     {
        vaccine_name
 : "HPV Vaccine",
-       min_age: "240",
-     active:"false", 
+       min_age: "24",
+     active:"true", 
      description: "Various strains of HPV spread through sexual contact and are associated with most cases of cervical cancer. Gardasil 9 is an HPV vaccine approved by the U.S. Food and Drug Administration and can be used for both girls and boys."
    },
     {
        vaccine_name
 : "zoster",
-       min_age: "360",
-     active:"false",  
+       min_age: "19",
+     active:"true",  
      description: "A zoster vaccine is a vaccine that reduces the incidence of herpes zoster (shingles), a viral disease that provokes a painful rash with blisters."
    },
     {
        vaccine_name
 : "Pneumococcal vaccines",
-       min_age: "720",
+       min_age: "72",
      active:"false",  
      description: "Pneumococcal conjugate vaccine (PCV) is a pneumococcal vaccine and a conjugate vaccine used to protect infants, young children, and adults against disease caused by the bacterium Streptococcus pneumoniae (pneumococcus). "
    }
