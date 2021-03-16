@@ -30,18 +30,7 @@ session_db.open().catch(function (e) {
     console.error("Open failed: " + e.stack);
 })
 
-/*
-session_db.transaction('rw', session_db.vaccine_session, function () {
 
-}).then(function () {
-    session_db.vaccine_session.put({
-        vaccine_id: vs.vaccine_id,
-        vaccine_days: vs.day,
-        vaccine_start_date: vs.start_date,
-        vaccine_duration: vs.duration
-    })
-})
-*/
 db.transaction('rw', db.admin, function () { 
     // sth
 }).then(function(){
