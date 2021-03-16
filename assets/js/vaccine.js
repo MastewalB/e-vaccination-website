@@ -110,3 +110,13 @@ var vaccinesList= [
      description: "Pneumococcal conjugate vaccine (PCV) is a pneumococcal vaccine and a conjugate vaccine used to protect infants, young children, and adults against disease caused by the bacterium Streptococcus pneumoniae (pneumococcus). "
    }
 ]
+
+dbv.vaccines.bulkPut(vaccinesList).then(function(lastKey) {
+    console.log("Done putting 100,000 raindrops all over the place");
+    console.log("Last raindrop's id was: " + lastKey); // Will be 100000.
+}).catch(Dexie.BulkError, function (e) {
+    // Explicitely catching the bulkAdd() operation makes those successful
+    // additions commit despite that there were errors.
+    console.error ("Some raindrops did not succeed. However, " +
+       100000-e.failures.length + " raindrops was added successfully");
+})
