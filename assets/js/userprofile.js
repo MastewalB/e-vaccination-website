@@ -115,8 +115,9 @@ function checkVaccineUpdate(age){
         // .between(vaccine.min_age, vaccine.min_age+ 10,true)
         .equals("true",true)
         .each(vaccine => {
-            if (age <= vaccine.min_age <= age + 10){
-                console.log("AGee check passed")
+            
+            if (parseInt(vaccine.min_age) <= parseInt(age) && parseInt(age) <= parseInt(vaccine.min_age) + 10){
+                console.log("AGee check passed", vaccine.min_age, age)
                 let template= vaccineTemplate("assets/img/departments-4.jpg", vaccine.description, vaccine.vaccine_name, vaccine.vaccine_name)
                 let recommendedRow = vaccineContainer.querySelector(".row")
                 recommendedRow.innerHTML += template
@@ -140,7 +141,7 @@ function checkVaccineUpdate(age){
 function checkAppointement(){
     
     
-    sessiondb.sessions.where("patientId","session_status")
+    session_db.vaccine_session.where("patientId","session_status")
     // .between(vaccine.min_age, vaccine.min_age+ 10,true)
     .equals(localStorage.getItem("currentUser"),"Incomplete",true, true)
     .each(session => {
@@ -159,17 +160,13 @@ vaccineContainer.addEventListener("click", e=>{
     console.log(e.target.id)
     if (e.target.id == "applyBtn"){
         console.log("signed up for vaccine")
-        let currUser = localStorage.getItem("currentUser")
-        db.users.update(username=currUser, {password: "w@r.k"}).then(function (updated) {
-            if (updated){
-                console.log ("Friend number 2 was renamed to Number 2");
-            }else{
-                console.log ("Nothing was updated - there were no friend with primary key: 2");
-            }
-            
-            }).catch(e =>{
-                console.log(e)
-            });
+        console.log("button clicked");
+        // display the popup form 
+        popup.style.display="block";
+        popupBtn.setAttribute("data-id", e.target.parentElement.parentElement.dataset.id)
+        // console.log(e.target.parentElement.parentElement.dataset.id, "***********")
+        // get values from the popup form 
+
     }
 
 })
