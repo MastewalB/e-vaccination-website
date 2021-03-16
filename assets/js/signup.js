@@ -145,7 +145,7 @@ form.addEventListener("submit", function(event){
            }).then(function(){
                console.log("Database created and added to users table")
                localStorage.setItem("currentUser", person.phone)
-            //    login()
+               location.replace("logIn.html")
            }).catch(e =>{
                console.log("Error", e)
            })
