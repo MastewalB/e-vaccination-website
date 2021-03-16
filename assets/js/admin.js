@@ -181,4 +181,24 @@ startSessionBtn.addEventListener("click", e=>{
       console.log(e.stack)
     })
   })
+
+  // display active sessions for Admin
+
+sessiondb.sessions.where("session_status")
+.equals("Incomplete",true)
+.each(session => {
+  console.log(session.patientId, session.patient_info.appointemntDate) 
+  vaccineTable.innerHTML += `
+  <tr>
+  <th scope="row">${0}</th>
+  <td id="patient_id_field">${session.assigned_doctor_id}</td>
+  <td>${session.vaccine_ID}</td>
+  <td id="scheduledDate">${session.patient_info.appointemntDate}</td>
+  <td> ${session.session_status}</td>
+  
+</tr>`;
+
+}).catch(e =>{
+console.log("Error", e)
+})
   
